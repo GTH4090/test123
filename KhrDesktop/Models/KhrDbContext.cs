@@ -196,7 +196,6 @@ public partial class KhrDbContext : DbContext
 
             entity.HasOne(d => d.User).WithMany(p => p.Visits)
                 .HasForeignKey(d => d.UserId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("visit_fk_1");
         });
 
@@ -217,6 +216,9 @@ public partial class KhrDbContext : DbContext
             entity.Property(e => e.LastName)
                 .HasMaxLength(50)
                 .HasColumnName("last_name");
+            entity.Property(e => e.Organisation)
+                .HasMaxLength(50)
+                .HasColumnName("organisation");
             entity.Property(e => e.PassportNumber)
                 .HasMaxLength(50)
                 .HasColumnName("passport_number");

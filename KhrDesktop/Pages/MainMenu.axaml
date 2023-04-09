@@ -7,7 +7,7 @@
     <Grid RowDefinitions="Auto, *, Auto">
         <DataGrid Grid.Row="1" Name="VisitDg" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="FinalDate" Binding="{Binding FinalDate,StringFormat='{}{o:dd/MM/yyyy}'}"/>
+                <DataGridTextColumn Header="FinalDate" Binding="{Binding FinalDate,StringFormat='{}{0:dd/MM/yyyy}'}"/>
                 <DataGridTextColumn Header="FinalTime" Binding="{Binding FinalTime}"/>
                 <DataGridTextColumn Header="Type" Binding="{Binding Type.Name}"/>
                 <DataGridTextColumn Header="Status" Binding="{Binding Status.Name}"/>
@@ -18,6 +18,7 @@
         
         <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
             <Button Name="AddVisitBtn" Content="Подать заявку на личное посещение" Click="AddVisitBtn_OnClick"/>
+            <Button Name="AddGroupVisit" Content="Подать заявку на груповое посещение" Click="AddGroupVisit_OnClick"/>
         </StackPanel>
     </Grid>
 </UserControl>

@@ -14,16 +14,24 @@ public partial class MainMenu : UserControl
 {
     private void LoadData()
     {
-        List<Visit> visits = Db.Visits.Where(el => el.UserId == Log.Id)
-            .Include(el => el.Employee)
-            .ThenInclude(el => el.Division).Include(el => el.Type)
-            .Include(el => el.Status).Include(el => el.Target)
-            .ToList();
-
-        if (visits.Count() != 0)
+        if (Log != null)
         {
-            VisitDg.Items = visits;
+            List<Visit> visits = Db.Visits.Where(el => el.UserId == Log.Id)
+                .Include(el => el.Employee)
+                .ThenInclude(el => el.Division).Include(el => el.Type)
+                .Include(el => el.Status).Include(el => el.Target)
+                .ToList();
+
+            if (visits.Count() != 0)
+            {
+                VisitDg.Items = visits;
+            }
         }
+        else
+        {
+            VisitDg.IsVisible = false;
+        }
+        
     }
     public MainMenu()
     {
@@ -35,5 +43,10 @@ public partial class MainMenu : UserControl
     private void AddVisitBtn_OnClick(object? sender, RoutedEventArgs e)
     {
         Navigationn.Content = new VisitPage();
+    }
+
+    private void AddGroupVisit_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Navigationn.Content = new GroupVisitPage();
     }
 }

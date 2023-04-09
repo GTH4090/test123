@@ -6,6 +6,7 @@
         <entry key="KhrDesktop/App.axaml" value="KhrDesktop/KhrDesktop.csproj" />
         <entry key="KhrDesktop/MainWindow.axaml" value="KhrDesktop/KhrDesktop.csproj" />
         <entry key="KhrDesktop/Pages/Auth.axaml" value="KhrDesktop/KhrDesktop.csproj" />
+        <entry key="KhrDesktop/Pages/GroupVisitPage.axaml" value="KhrDesktop/KhrDesktop.csproj" />
         <entry key="KhrDesktop/Pages/MainMenu.axaml" value="KhrDesktop/KhrDesktop.csproj" />
         <entry key="KhrDesktop/Pages/Registration.axaml" value="KhrDesktop/KhrDesktop.csproj" />
         <entry key="KhrDesktop/Pages/VisitPage.axaml" value="KhrDesktop/KhrDesktop.csproj" />

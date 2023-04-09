@@ -23,6 +23,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [/home/user/RiderProjects/KhrDesktop/KhrDesktop/Pages/Auth.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/home/user/RiderProjects/KhrDesktop/KhrDesktop/Pages/GroupVisitPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/user/RiderProjects/KhrDesktop/KhrDesktop/Pages/MainMenu.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

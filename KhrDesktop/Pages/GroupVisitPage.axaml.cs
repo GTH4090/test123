@@ -6,14 +6,12 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
-using Avalonia.Media.Imaging;
-using static KhrDesktop.Classes.Helper;
 using KhrDesktop.Models;
-
+using static KhrDesktop.Classes.Helper;
 
 namespace KhrDesktop.Pages;
 
-public partial class VisitPage : UserControl
+public partial class GroupVisitPage : UserControl
 {
     private void LoadCbx()
     {
@@ -33,19 +31,18 @@ public partial class VisitPage : UserControl
             Error();
         }
     }
-    public VisitPage()
+    public GroupVisitPage()
     {
         InitializeComponent();
         LoadCbx();
         VisitGrid.DataContext = new Visit();
         VisitorGrid.DataContext = new Visitor();
         (VisitGrid.DataContext as Visit).StatusId = 1;
-        (VisitGrid.DataContext as Visit).TypeId = 1;
+        (VisitGrid.DataContext as Visit).TypeId = 2;
         if (Log != null)
         {
             (VisitGrid.DataContext as Visit).UserId = Log.Id;
         }
-        
         DivisionCbx.SelectedIndex = 0;
         EmployeeCbx.SelectedIndex = 0;
         TargetCbx.SelectedIndex = 0;
@@ -95,33 +92,7 @@ public partial class VisitPage : UserControl
         }
     }
 
-    private async void ImgBtn_OnClick(object? sender, RoutedEventArgs e)
-    {
-        try
-        {
-            OpenFileDialog open = new OpenFileDialog();
-            open.AllowMultiple = false;
-            open.Filters.Add(new FileDialogFilter(){Name = "jpg", Extensions = new List<string>(){"jpg"}});
-            var item = await open.ShowAsync(Win);
-            
-            if (item != null)
-            {
-                MemoryStream stream = new MemoryStream(File.ReadAllBytes(item[0]));
-                Bitmap bit = new Bitmap(stream);
-                if (bit.Size.Width * 4 == bit.Size.Height * 3 && stream.Length <= 1024 * 1024 * 4)
-                {
-                    (VisitorGrid.DataContext as Visitor).PassportScan = File.ReadAllBytes(item[0]);
-                    UserImg.Source = bit;
-                }
-                
-            }
-
-        }
-        catch (Exception exception)
-        {
-            Error();
-        }
-    }
+    
 
     private void ClearBtn_OnClick(object? sender, RoutedEventArgs e)
     {
@@ -162,4 +133,6 @@ public partial class VisitPage : UserControl
             
         }
     }
+
+    
 }

@@ -60,4 +60,18 @@ public partial class Auth : UserControl
     {
         Navigationn.Content = new Registration();
     }
+
+    private void GuestBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        try
+        {
+            
+            
+            Navigationn.Content = new MainMenu();
+        }
+        catch (Exception exception)
+        {
+            Error();
+        }
+    }
 }

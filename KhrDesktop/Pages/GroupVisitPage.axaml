@@ -2,8 +2,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="800"
-             x:Class="KhrDesktop.Pages.VisitPage">
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="KhrDesktop.Pages.GroupVisitPage">
     <Grid Name="VisitGrid" RowDefinitions="Auto, Auto, *, Auto, *, Auto, Auto" ColumnDefinitions="*, 150, *">
         <Label HorizontalAlignment="Center" Grid.ColumnSpan="3" Width="Nan" Content="Форма записи на посещение мероприятия"/>
         
@@ -60,11 +60,11 @@
         </StackPanel>
         
         
-        <Border Grid.Row="3" Grid.ColumnSpan="3" Grid.Column="0" Background="#FF6600" HorizontalAlignment="Stretch" 
+        <Border Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="0" Background="#FF6600" HorizontalAlignment="Stretch" 
                 Margin="5, 0" VerticalAlignment="Stretch">
             <Label Width="nan" Content="Информация о посетителе" HorizontalAlignment="Center"></Label>
         </Border>
-        <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Background="LightGray" Margin="5, 0">
+        <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Background="LightGray" Margin="5, 0">
             <Grid Name="VisitorGrid" RowDefinitions="*, *, *, *, *" ColumnDefinitions="*, *, *, *, *">
                 <Label Grid.Column="0" Grid.Row="0" Content="Фамилия*:"/>
                 <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding LastName}"/>
@@ -88,14 +88,41 @@
                 <Label Grid.Column="2" Grid.Row="4" Content="Номер:"/>
                 <MaskedTextBox Name="NumberTbx" Mask="000000" Grid.Column="3" Grid.Row="4" Text="{Binding PassportNumber}"/>
                 
-                <StackPanel Orientation="Vertical" Grid.Column="4" Grid.RowSpan="5">
-                    <Image Name="UserImg" Height="100"/>
-                    <Button Name="ImgBtn" Click="ImgBtn_OnClick" Content="Загрузить фото" Background="White">
-                        <Button.BorderBrush>
-                            <SolidColorBrush Color="#FF6600"/>
-                        </Button.BorderBrush>
-                    </Button>
+                
+                
+            </Grid>
+            <Button Content="Добавить посетителя" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="White">
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FF6600"/>
+                </Button.BorderBrush>
+            </Button>
+        </StackPanel>
+        <Border Grid.Row="3"  Grid.Column="2" Background="#FF6600" HorizontalAlignment="Stretch" 
+                Margin="5, 0" VerticalAlignment="Stretch">
+            <Label Width="nan" Content="Список посетителей" HorizontalAlignment="Center"></Label>
+        </Border>
+        <StackPanel Grid.Row="4" Grid.Column="2" Background="LightGray" Margin="5, 0">
+            <Grid RowDefinitions="Auto, *">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button Content="загрузить список" Background="LightGray"/>
+                    <Button Content="Скачать шаблон списка" Background="LightGray"/>
                 </StackPanel>
+                <DataGrid Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="№"/>
+                        <DataGridTextColumn Header="ФИО"/>
+                        <DataGridTextColumn Header="Контакты"/>
+                        
+                        <DataGridTemplateColumn Header="Фотография">
+                            
+                            <DataTemplate>
+                                
+                            </DataTemplate>
+                                
+                            
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
             </Grid>
         </StackPanel>
         

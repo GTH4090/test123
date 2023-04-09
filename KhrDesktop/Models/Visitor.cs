@@ -9,9 +9,9 @@ public partial class Visitor
 
     public string LastName { get; set; } = null!;
 
-    public string? FirstName { get; set; }
+    public string FirstName { get; set; } = null!;
 
-    public string Surname { get; set; } = null!;
+    public string? Surname { get; set; }
 
     public byte[]? Photo { get; set; }
 
@@ -27,9 +27,11 @@ public partial class Visitor
 
     public byte[] PassportScan { get; set; } = null!;
 
-    public string? Remark { get; set; }
+    public string Remark { get; set; } = null!;
 
     public bool IsBanned { get; set; }
+
+    public string? Organisation { get; set; }
 
     public virtual Visit Visit { get; set; } = null!;
 }

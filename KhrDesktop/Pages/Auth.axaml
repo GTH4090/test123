@@ -16,6 +16,6 @@
         </StackPanel>
         <Button Content="Авторизоваться" Name="LoginBtn" Click="LoginBtn_OnClick"/>
         <Button Content="Регистрация" Name="RegBtn" Click="RegBtn_OnClick"/>
-        <Button Content="Войти как гость"/>
+        <Button Content="Войти как гость" Name="GuestBtn" Click="GuestBtn_OnClick"/>
     </StackPanel>
 </UserControl>
