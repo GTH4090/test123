@@ -1,0 +1,84 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="800"
+             x:Class="KhrDesktop.Pages.VisitPage">
+    <Grid Name="VisitGrid" RowDefinitions="Auto, Auto, *, Auto, *, Auto, Auto" ColumnDefinitions="*, 150, *">
+        <Label HorizontalAlignment="Center" Grid.ColumnSpan="3" Width="Nan" Content="Форма подачи заявления на посещение"/>
+        
+        <Border Grid.Row="1" Grid.ColumnSpan="1" Grid.Column="0" Background="#FF6600" HorizontalAlignment="Stretch" 
+                Margin="5, 0" VerticalAlignment="Stretch">
+            <Label Width="nan" Content="" HorizontalAlignment="Center"/>
+        </Border>
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="1" Background="LightGray" Margin="5, 0">
+            <Label Width="nan" Content="Период*:" HorizontalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                <Label Content="с*:" Width="nan"/>
+                <CalendarDatePicker Name="StartDp" SelectedDate="{Binding StartDate}"/>
+                <Label Content="до*:" Width="nan"/>
+                <CalendarDatePicker Name="EndDp" SelectedDate="{Binding EndDate}"/>
+                
+            </StackPanel>
+            <Label Content="Цель*:" Width="nan" HorizontalAlignment="Center"/>
+            <ComboBox Name="TargetCbx" SelectedItem="{Binding Target}" >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}"></TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </StackPanel>
+        
+        
+        <Border Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="1" Background="#FF6600" HorizontalAlignment="Stretch" 
+                Margin="5, 0" VerticalAlignment="Stretch">
+            <Label Width="nan" Content="" HorizontalAlignment="Center"></Label>
+        </Border>
+        <StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Background="LightGray" Margin="5, 0">
+            <Label Content="Подразделение*:" Width="nan"/>
+            <ComboBox Name="DivisionCbx" SelectedItem="{Binding Employee.Division}" >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}"></TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <Label Content="Сотрудник*:" Width="nan"/>
+            <ComboBox Name="EmployeeCbx" SelectedItem="{Binding Employee}" >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}"></TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </StackPanel>
+        
+        
+        <Border Grid.Row="3" Grid.ColumnSpan="3" Grid.Column="0" Background="#FF6600" HorizontalAlignment="Stretch" 
+                Margin="5, 0" VerticalAlignment="Stretch">
+            <Label Width="nan" Content="" HorizontalAlignment="Center"></Label>
+        </Border>
+        <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Background="LightGray" Margin="5, 0">
+            
+        </StackPanel>
+        
+        <Border Grid.Row="5" Grid.ColumnSpan="2" Grid.Column="0" Background="#FF6600" HorizontalAlignment="Stretch" 
+                Margin="5, 0" VerticalAlignment="Stretch">
+            <Label Width="nan" Content="" HorizontalAlignment="Center"></Label>
+        </Border>
+        <StackPanel Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Background="LightGray" Margin="5, 0">
+            <Button Content="Прикрепить документ" Background="LightGray"></Button>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="5" Orientation="Horizontal" Grid.ColumnSpan="1" Grid.Column="2" Grid.RowSpan="2" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <Button Content="Очистить форму" Name="ClearBtn" Background="White"/>
+            <Button Content="Оформить заявку" Name="OkBtn" Background="White">
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FF6600"/>
+                </Button.BorderBrush>
+            </Button>
+        </StackPanel>
+        
+    </Grid>
+</UserControl>

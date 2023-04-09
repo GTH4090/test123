@@ -1,0 +1,33 @@
+is_global = true
+build_property.AvaloniaNameGeneratorBehavior = InitializeComponent
+build_property.AvaloniaNameGeneratorDefaultFieldModifier = internal
+build_property.AvaloniaNameGeneratorFilterByPath = *
+build_property.AvaloniaNameGeneratorFilterByNamespace = *
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = KhrDesktop
+build_property.ProjectDir = /home/user/RiderProjects/KhrDesktop/KhrDesktop/
+
+[/home/user/RiderProjects/KhrDesktop/KhrDesktop/App.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/user/RiderProjects/KhrDesktop/KhrDesktop/MainWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/user/RiderProjects/KhrDesktop/KhrDesktop/Pages/Auth.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/user/RiderProjects/KhrDesktop/KhrDesktop/Pages/MainMenu.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/user/RiderProjects/KhrDesktop/KhrDesktop/Pages/Registration.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/user/RiderProjects/KhrDesktop/KhrDesktop/Pages/VisitPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
